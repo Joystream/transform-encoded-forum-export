@@ -1,0 +1,25 @@
+[package]
+name = "transform-encoded-forum-export"
+version = "1.0.0"
+authors = ["Mokhtar Naamani <mokhtar.naamani@gmail.com>"]
+edition = "2018"
+
+[[bin]]
+name = 'transform'
+path = 'src/main.rs'
+
+[dependencies]
+serde = '1.0'
+serde_derive = '1.0'
+serde_json = '1.0'
+parity-codec = '^3.3'
+parity-codec-derive = '^3.2'
+hex = '0.4'
+
+[dependencies.primitives]
+git = 'https://github.com/paritytech/substrate'
+package = 'sr-primitives'
+branch = 'v1.0' # this is ahead of acropolis release
+# Acropolis release - but due to issues with dependencies it doesn't build
+# see:
+# rev = '6dfc3e8b057bb00322136251a0f10305fbb1ad8f'
