@@ -8,7 +8,7 @@ Run joystream-node (Acropolis testnet):
 joystream-node
 ```
 
-Exported Forum state using the export tool:
+Export Joystream Forum state (categories, threads and posts) using the export tool:
 
 ```
 git clone -b acropolis https://github.com/Joystream/joystream-api-examples.git
@@ -17,12 +17,12 @@ yarn && yarn build
 node lib/export_forum --encoded > forum_data_encoded.json
 ```
 
-Run the transofrm tool:
+Run the transform tool (this cargo package):
 
 ```bash
 git clone https://github.com/Joystream/transform-encoded-forum-export
 cd transform-encoded-forum-export/
 cargo build
 # output file from export tool
-cat forum_data_encoded.json | ./target/debug/transform-encoded-forum-export > forum_data_serialized.json
+cat forum_data_encoded.json | cargo run > forum_data_serialized.json
 ```
