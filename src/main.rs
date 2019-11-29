@@ -26,6 +26,13 @@ pub type AccountSignature = AnySignature;
 // #[derive(PartialEq, Eq, PartialOrd, Ord, Clone, Encode, Decode, Serialize, Deserialize, Default)]
 // pub struct AccountId(pub [u8; 32]);
 
+
+// Reads encoded forum export .json on standard input (produced by export script in)
+// https://github.com/Joystream/joystream-api-examples/blob/acropolis/src/export_forum.ts
+
+// In future we can use https://github.com/scs/substrate-api-client to read directly from
+// a node (currently it doesn't support older metadata version) so we don't need to split export tool into two separate programs.
+
 fn main() {
     // let data = fs::read_to_string("forum_data_encoded.json").expect("failed reading file");
     // let mut data = Vec::new();
